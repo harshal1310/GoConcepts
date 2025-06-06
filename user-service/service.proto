@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package pb;
+option go_package = "user-service/pb"; 
+
+service ServiceB {
+  rpc Greet(Empty) returns (MessageResponse);
+  rpc Add(MessageRequest) returns (MessageResponse);
+}
+
+message Empty {}
+
+message MessageRequest {
+  string message = 1;
+}
+
+message MessageResponse {
+  string message = 1;
+}
+
